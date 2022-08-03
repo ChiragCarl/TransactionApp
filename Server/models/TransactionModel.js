@@ -3,7 +3,7 @@ import db from "../config/database.js";
  
 const { DataTypes } = Sequelize;
 
-const Product = db.define('transaction_table',{
+const transactionDB = db.define('transaction_table',{
     transactionDate:{
         type: DataTypes.DATE
     },
