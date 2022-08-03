@@ -23,4 +23,4 @@ const transactionDB = db.define('transaction_table',{
     freezeTableName: true
 });
  
-export default Product;
+export default transactionDB;
