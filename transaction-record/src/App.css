@@ -22,6 +22,7 @@ body{
   border:5px ridge green;
   padding:20px;
   box-shadow:10px 10px 10px black;
+  margin:10px;
 }
 .mainHeading{
   background-color: black;

@@ -98,7 +98,7 @@ export default function ViewTransaction() {
     }
 
     const [myStyle,setMyStyle]=useState({
-        backgroundColor:"red"
+        backgroundColor:"white"
     });
 
     //this method is used to onblur event which is used to check the empty validation if the box 
@@ -122,7 +122,16 @@ export default function ViewTransaction() {
   return (
     <div className='container'>
         <div className='row'>
-            <div className='col-md-5 my-3 tableSetting'>
+            <br/>
+            <div className='col-md-12' style={{textAlign:"left"}}>
+                     <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                          Add New Transaction
+                    </button>
+            </div>
+            
+            <div className='col-md-12 tableSetting'>
+                   
+                
                     <h1>View All Transaction </h1>
                     <table className="table table-success table-striped">
                             <thead>
@@ -149,49 +158,63 @@ export default function ViewTransaction() {
                                 }
                             </tbody>
                     </table>
-
             </div>
-            <div className='col-md-1'> </div>
-            <div className='col-md-6 tableSetting'>
-                <h1>Add New Record </h1>
-                <div className='form-group'>
-                    <label>Select Transaction Type</label>
-                    <select className='form-control' onChange={(e)=>setTransactionType(e.target.value)}>
-                        <option >select</option>
-                        <option value="Credit">Credit</option>
-                        <option value="Dedit">Dedit</option> 
-                    </select>
-                </div>
-                
-                 <div className='form-group'>
-                    <label>Enter Amount</label>
-                    <input type="Number"
-                        placeholder='enter Amount'
-                        className='form-control'
-                        value={amount}
-                        onChange={(e)=>setAmount(e.target.value)}    
-                    />
-                </div>
+           
+        
+            { 
+                /* here i need to set the code*/
+            }
 
-                <div className='form-group'>
-                    <label>Enter Description</label>
-                    <input type="text"
-                        placeholder='enter title'
-                        className='form-control'
-                        style={myStyle}
-                        value={description}
-                        onChange={(e)=>setDescription(e.target.value)}    
-                        onBlur={handleOnBlur}
-                />
-             
 
+                <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog" role="document">
+                    <div className="modal-content">
+                    <div className="modal-header">
+                       
+                        <h1 className="modal-title" id="exampleModalLabel">Add New Record 
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                        </h1>
+                    </div>
+                    <div className="modal-body">
+                            <div className='form-group'>
+                                <label>Select Transaction Type</label>
+                                <select className='form-control' onChange={(e)=>setTransactionType(e.target.value)}>
+                                    <option>select</option>
+                                    <option value="Credit">Credit</option>
+                                    <option value="Dedit">Dedit</option> 
+                                </select>
+                            </div>
+                            <div className='form-group'>
+                                <label>Enter Amount</label>
+                                <input type="Number"
+                                    placeholder='enter Amount'
+                                    className='form-control'
+                                    value={amount}
+                                    onChange={(e)=>setAmount(e.target.value)}    
+                                />
+                            </div>
+                            <div className='form-group'>
+                                <label>Enter Description</label>
+                                <input type="text"
+                                    placeholder='Enter Description'
+                                    className='form-control'
+                                    style={myStyle}
+                                    value={description}
+                                    onChange={(e)=>setDescription(e.target.value)}    
+                                    onBlur={handleOnBlur}
+                            />
+                            </div>
+                    </div>
+                    <div className="modal-footer">
+                    <button type="button"  onClick={handleSubmit} className="btn btn-primary">Save changes</button>
+                        <button type="button"  className="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <h1 style={{textAlign:"center"}}> {error}</h1>
+                    </div>
+                    </div>
                 </div>
-               
-                
-                <button className='btn btn-primary my-3' onClick={handleSubmit}>Submit</button>
-                <h1> {error}</h1>
-
-            </div>
+                </div>
         </div>
     </div>
   )
