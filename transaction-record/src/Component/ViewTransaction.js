@@ -169,14 +169,13 @@ export default function ViewTransaction() {
                 <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
-                    <div className="modal-header">
-                       
-                        <h1 className="modal-title" id="exampleModalLabel">Add New Record 
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                        </h1>
-                    </div>
+                        <div className="modal-header">
+                            <h1 className="modal-title" id="exampleModalLabel">Add New Record 
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                            </h1>
+                        </div>
                     <div className="modal-body">
                             <div className='form-group'>
                                 <label>Select Transaction Type</label>
